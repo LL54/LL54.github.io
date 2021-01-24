@@ -336,7 +336,6 @@ return 0;</code></pre>
 
    return表达式</code></pre>
 <p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li></ul></pre> 
 <ul><li>返回值类型 ：一个函数可以返回一个值。在函数定义中</li><li>函数名：给函数起个名称</li><li>参数列表：使用该函数时，传入的数据</li><li>函数体语句：花括号内的代码，函数内需要执行的语句</li><li>return表达式： 和返回值类型挂钩，函数执行完后，返回相应的数据</li></ul> 
 <p>**示例：**定义一个加法函数，实现两个数相加</p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//函数定义
@@ -461,28 +460,31 @@ return 0;</code></pre>
 using namespace std;
 
 <p>//实现两个数字交换的函数声明<br>void swap(int a, int b);</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="&#123;&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;&#125;"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li></ul></pre> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//swap.cpp文件
 #include "swap.h"
 
-<p>void swap(int a, int b)<br>&#123;<br>    int temp = a;<br>    a = b;<br>    b = temp;</p>
-<pre><code>cout &amp;lt;&amp;lt; &quot;a = &quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl;
-cout &amp;lt;&amp;lt; &quot;b = &quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; endl;</code></pre>
-<p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li></ul></pre> 
+void swap(int a, int b)
+&#123;
+    int temp = a;
+    a = b;
+    b = temp;
+
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; "b = " &lt;&lt; b &lt;&lt; endl;
+&#125;
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//main函数文件
 #include "swap.h"
 int main() &#123;
 
-<pre><code>int a = 100;
-int b = 200;
-swap(a, b);
+    int a = 100;
+    int b = 200;
+    swap(a, b);
 
-system(&quot;pause&quot;);
+    system("pause");
 
-return 0;</code></pre>
-<p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li></ul></pre> 
+    return 0;
+&#125;
+
 <h2><a name="t39"></a><a name="t39"></a><a id="7__2709"></a>7 指针</h2> 
 <h3><a name="t40"></a><a name="t40"></a><a id="71__2711"></a>7.1 指针的基本概念</h3> 
 <p><strong>指针的作用：</strong> 可以通过指针间接访问内存</p> 
@@ -492,26 +494,25 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">int main() &#123;
 
-<pre><code>//1、指针的定义
-int a = 10; //定义整型变量a
+    //1、指针的定义
+    int a = 10; //定义整型变量a
 
-//指针定义语法： 数据类型 * 变量名 ;
-int * p;
+    //指针定义语法： 数据类型 * 变量名 ;
+    int * p;
 
-//指针变量赋值
-p = &amp;amp;a; //指针指向变量a的地址
-cout &amp;lt;&amp;lt; &amp;amp;a &amp;lt;&amp;lt; endl; //打印数据a的地址
-cout &amp;lt;&amp;lt; p &amp;lt;&amp;lt; endl;  //打印指针变量p
+    //指针变量赋值
+    p = &amp;a; //指针指向变量a的地址
+    cout &lt;&lt; &amp;a &lt;&lt; endl; //打印数据a的地址
+    cout &lt;&lt; p &lt;&lt; endl;  //打印指针变量p
 
-//2、指针的使用
-//通过*操作指针变量指向的内存
-cout &amp;lt;&amp;lt; &quot;*p = &quot; &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl;
+    //2、指针的使用
+    //通过*操作指针变量指向的内存
+    cout &lt;&lt; "*p = " &lt;&lt; *p &lt;&lt; endl;
 
-system(&quot;pause&quot;);
+    system("pause");
 
-return 0;</code></pre>
-<p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li><li style="color: rgb(153, 153, 153);">18</li><li style="color: rgb(153, 153, 153);">19</li><li style="color: rgb(153, 153, 153);">20</li><li style="color: rgb(153, 153, 153);">21</li></ul></pre> 
+    return 0;
+&#125;
 <p>指针变量和普通变量的区别</p> 
 <ul><li>普通变量存放的是数据,指针变量存放的是地址</li><li>指针变量可以通过" * "操作符，操作指针变量指向的内存空间，这个过程称为解引用</li></ul> 
 <blockquote> 
@@ -528,22 +529,21 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">int main() &#123;
 
-<pre><code>int a = 10;
+    int a = 10;
 
-int * p;
-p = &amp;amp;a; //指针指向数据a的地址
+    int * p;
+    p = &amp;a; //指针指向数据a的地址
 
-cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl; //* 解引用
-cout &amp;lt;&amp;lt; sizeof(p) &amp;lt;&amp;lt; endl;
-cout &amp;lt;&amp;lt; sizeof(char *) &amp;lt;&amp;lt; endl;
-cout &amp;lt;&amp;lt; sizeof(float *) &amp;lt;&amp;lt; endl;
-cout &amp;lt;&amp;lt; sizeof(double *) &amp;lt;&amp;lt; endl;
+    cout &lt;&lt; *p &lt;&lt; endl; //* 解引用
+    cout &lt;&lt; sizeof(p) &lt;&lt; endl;
+    cout &lt;&lt; sizeof(char *) &lt;&lt; endl;
+    cout &lt;&lt; sizeof(float *) &lt;&lt; endl;
+    cout &lt;&lt; sizeof(double *) &lt;&lt; endl;
 
-system(&quot;pause&quot;);
+    system("pause");
 
-return 0;</code></pre>
-<p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li><li style="color: rgb(153, 153, 153);">14</li><li style="color: rgb(153, 153, 153);">15</li><li style="color: rgb(153, 153, 153);">16</li><li style="color: rgb(153, 153, 153);">17</li></ul></pre> 
+    return 0;
+&#125;
 <blockquote> 
  <p>总结：所有指针类型在32位操作系统下是4个字节</p> 
 </blockquote> 
@@ -554,33 +554,31 @@ return 0;</code></pre>
 <p><strong>示例1：空指针</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">int main() &#123;
 
-<pre><code>//指针变量p指向内存地址编号为0的空间
-int * p = NULL;
+    //指针变量p指向内存地址编号为0的空间
+    int * p = NULL;
 
-//访问空指针报错 
-//内存编号0 ~255为系统占用内存，不允许用户访问
-cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl;
+    //访问空指针报错 
+    //内存编号0 ~255为系统占用内存，不允许用户访问
+    cout &lt;&lt; *p &lt;&lt; endl;
 
-system(&quot;pause&quot;);
+    system("pause");
 
-return 0;</code></pre>
-<p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li><li style="color: rgb(153, 153, 153);">13</li></ul></pre> 
+    return 0;
+&#125;
 <p><strong>野指针</strong>：指针变量指向非法的内存空间</p> 
 <p><strong>示例2：野指针</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">int main() &#123;
 
-<pre><code>//指针变量p指向内存地址编号为0x1100的空间
-int * p = (int *)0x1100;
+    //指针变量p指向内存地址编号为0x1100的空间
+    int * p = (int *)0x1100;
 
-//访问野指针报错 
-cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl;
+    //访问野指针报错 
+    cout &lt;&lt; *p &lt;&lt; endl;
 
-system(&quot;pause&quot;);
+    system("pause");
 
-return 0;</code></pre>
-<p>}</p>
-<div class="hljs-button signin" data-title="登录后复制" data-report-click="{&quot;spm&quot;:&quot;1001.2101.3001.4259&quot;}"></div></code><ul class="pre-numbering" style=""><li style="color: rgb(153, 153, 153);">1</li><li style="color: rgb(153, 153, 153);">2</li><li style="color: rgb(153, 153, 153);">3</li><li style="color: rgb(153, 153, 153);">4</li><li style="color: rgb(153, 153, 153);">5</li><li style="color: rgb(153, 153, 153);">6</li><li style="color: rgb(153, 153, 153);">7</li><li style="color: rgb(153, 153, 153);">8</li><li style="color: rgb(153, 153, 153);">9</li><li style="color: rgb(153, 153, 153);">10</li><li style="color: rgb(153, 153, 153);">11</li><li style="color: rgb(153, 153, 153);">12</li></ul></pre> 
+    return 0;
+&#125;
 <blockquote> 
  <p>总结：空指针和野指针都不是我们申请的空间，因此不要访问。</p> 
 </blockquote> 
@@ -590,29 +588,29 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-c++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">int main() &#123;
 
-<pre><code>int a = 10;
-int b = 10;
+    int a = 10;
+    int b = 10;
 
-//const修饰的是指针，指针指向可以改，指针指向的值不可以更改
-const int * p1 = &amp;amp;a; 
-p1 = &amp;amp;b; //正确
-//*p1 = 100;  报错
+    //const修饰的是指针，指针指向可以改，指针指向的值不可以更改
+    const int * p1 = &amp;a; 
+    p1 = &amp;b; //正确
+    //*p1 = 100;  报错
 
 
-//const修饰的是常量，指针指向不可以改，指针指向的值可以更改
-int * const p2 = &amp;amp;a;
-//p2 = &amp;amp;b; //错误
-*p2 = 100; //正确
+    //const修饰的是常量，指针指向不可以改，指针指向的值可以更改
+    int * const p2 = &amp;a;
+    //p2 = &amp;b; //错误
+    *p2 = 100; //正确
 
-//const既修饰指针又修饰常量
-const int * const p3 = &amp;amp;a;
-//p3 = &amp;amp;b; //错误
-//*p3 = 100; //错误
+    //const既修饰指针又修饰常量
+    const int * const p3 = &amp;a;
+    //p3 = &amp;b; //错误
+    //*p3 = 100; //错误
 
-system(&quot;pause&quot;);
+    system("pause");
 
-return 0;</code></pre>
-<p>}</p>
+    return 0;
+&#125;
 <blockquote> 
  <p>技巧：看const右侧紧跟着的是指针还是常量, 是指针就是常量指针，是常量就是指针常量</p> 
 </blockquote> 
@@ -621,24 +619,24 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">int main() &#123;
 
-<pre><code>int arr[] = &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
+    int arr[] = &#123; 1,2,3,4,5,6,7,8,9,10 &#125;;
 
-int * p = arr;  //指向数组的指针
+    int * p = arr;  //指向数组的指针
 
-cout &amp;lt;&amp;lt; &quot;第一个元素： &quot; &amp;lt;&amp;lt; arr[0] &amp;lt;&amp;lt; endl;
-cout &amp;lt;&amp;lt; &quot;指针访问第一个元素： &quot; &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl;
+    cout &lt;&lt; "第一个元素： " &lt;&lt; arr[0] &lt;&lt; endl;
+    cout &lt;&lt; "指针访问第一个元素： " &lt;&lt; *p &lt;&lt; endl;
 
-for (int i = 0; i &amp;lt; 10; i++)
-&#123;
-    //利用指针遍历数组
-    cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl;
-    p++;
+    for (int i = 0; i &lt; 10; i++)
+    &#123;
+        //利用指针遍历数组
+        cout &lt;&lt; *p &lt;&lt; endl;
+        p++;
+    &#125;
+
+    system("pause");
+
+    return 0;
 &#125;
-
-system(&quot;pause&quot;);
-
-return 0;</code></pre>
-<p>}</p>
 <h3><a name="t46"></a><a name="t46"></a><a id="77__2989"></a>7.7 指针和函数</h3> 
 <p>**作用：**利用指针作函数参数，可以修改实参的值</p> 
 <p><strong>示例：</strong></p> 
@@ -657,27 +655,28 @@ void swap2(int * p1, int *p2)
     *p2 = temp;
 &#125;
 
-<p>int main() &#123;</p>
-<pre><code>int a = 10;
-int b = 20;
-swap1(a, b); // 值传递不会改变实参
+int main() &#123;
 
-swap2(&amp;amp;a, &amp;amp;b); //地址传递会改变实参
+    int a = 10;
+    int b = 20;
+    swap1(a, b); // 值传递不会改变实参
 
-cout &amp;lt;&amp;lt; &quot;a = &quot; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl;
+    swap2(&amp;a, &amp;b); //地址传递会改变实参
 
-cout &amp;lt;&amp;lt; &quot;b = &quot; &amp;lt;&amp;lt; b &amp;lt;&amp;lt; endl;
+    cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl;
 
-system(&quot;pause&quot;);
+    cout &lt;&lt; "b = " &lt;&lt; b &lt;&lt; endl;
 
-return 0;</code></pre>
-<p>}</p>
+    system("pause");
+
+    return 0;
+&#125;
 <blockquote> 
  <p>总结：如果不想修改实参，就用值传递，如果想修改实参，就用地址传递</p> 
 </blockquote> 
 <h3><a name="t47"></a><a name="t47"></a><a id="78__3047"></a>7.8 指针、数组、函数</h3> 
 <p>**案例描述：**封装一个函数，利用冒泡排序，实现对整型数组的升序排序</p> 
-<p>例如数组：int arr[10] = { 4,3,6,9,1,2,10,8,7,5 };</p> 
+<p>例如数组：int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;</p> 
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-c++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//冒泡排序函数
 void bubbleSort(int * arr, int len)  //int * arr 也可以写为int arr[]
@@ -696,19 +695,28 @@ void bubbleSort(int * arr, int len)  //int * arr 也可以写为int arr[]
     &#125;
 &#125;
 
-<p>//打印数组函数<br>void printArray(int arr[], int len)<br>&#123;<br>    for (int i = 0; i &lt; len; i++)<br>    &#123;<br>        cout &lt;&lt; arr[i] &lt;&lt; endl;<br>    &#125;<br>&#125;</p>
-<p>int main() &#123;</p>
-<pre><code>int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
-int len = sizeof(arr) / sizeof(int);
+//打印数组函数
+void printArray(int arr[], int len)
+&#123;
+    for (int i = 0; i &lt; len; i++)
+    &#123;
+        cout &lt;&lt; arr[i] &lt;&lt; endl;
+    &#125;
+&#125;
 
-bubbleSort(arr, len);
+int main() &#123;
 
-printArray(arr, len);
+    int arr[10] = &#123; 4,3,6,9,1,2,10,8,7,5 &#125;;
+    int len = sizeof(arr) / sizeof(int);
 
-system(&quot;pause&quot;);
+    bubbleSort(arr, len);
 
-return 0;</code></pre>
-<p>}</p>
+    printArray(arr, len);
+
+    system("pause");
+
+    return 0;
+&#125;
 <blockquote> 
  <p>总结：当数组名传入到函数作为参数时，被退化为指向首元素的指针</p> 
 </blockquote> 
@@ -730,33 +738,34 @@ struct student
 &#125;stu3; //结构体变量创建方式3 
 
 
-<p>int main() &#123;</p>
-<pre><code>//结构体变量创建方式1
-struct student stu1; //struct 关键字可以省略
+int main() &#123;
 
-stu1.name = &quot;张三&quot;;
-stu1.age = 18;
-stu1.score = 100;
+    //结构体变量创建方式1
+    struct student stu1; //struct 关键字可以省略
 
-cout &amp;lt;&amp;lt; &quot;姓名：&quot; &amp;lt;&amp;lt; stu1.name &amp;lt;&amp;lt; &quot; 年龄：&quot; &amp;lt;&amp;lt; stu1.age  &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; stu1.score &amp;lt;&amp;lt; endl;
+    stu1.name = "张三";
+    stu1.age = 18;
+    stu1.score = 100;
 
-//结构体变量创建方式2
-struct student stu2 = &#123; &quot;李四&quot;,19,60 &#125;;
+    cout &lt;&lt; "姓名：" &lt;&lt; stu1.name &lt;&lt; " 年龄：" &lt;&lt; stu1.age  &lt;&lt; " 分数：" &lt;&lt; stu1.score &lt;&lt; endl;
 
-cout &amp;lt;&amp;lt; &quot;姓名：&quot; &amp;lt;&amp;lt; stu2.name &amp;lt;&amp;lt; &quot; 年龄：&quot; &amp;lt;&amp;lt; stu2.age  &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; stu2.score &amp;lt;&amp;lt; endl;
+    //结构体变量创建方式2
+    struct student stu2 = &#123; "李四",19,60 &#125;;
 
-
-stu3.name = &quot;王五&quot;;
-stu3.age = 18;
-stu3.score = 80;
+    cout &lt;&lt; "姓名：" &lt;&lt; stu2.name &lt;&lt; " 年龄：" &lt;&lt; stu2.age  &lt;&lt; " 分数：" &lt;&lt; stu2.score &lt;&lt; endl;
 
 
-cout &amp;lt;&amp;lt; &quot;姓名：&quot; &amp;lt;&amp;lt; stu3.name &amp;lt;&amp;lt; &quot; 年龄：&quot; &amp;lt;&amp;lt; stu3.age  &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; stu3.score &amp;lt;&amp;lt; endl;
+    stu3.name = "王五";
+    stu3.age = 18;
+    stu3.score = 80;
 
-system(&quot;pause&quot;);
 
-return 0;</code></pre>
-<p>}</p>
+    cout &lt;&lt; "姓名：" &lt;&lt; stu3.name &lt;&lt; " 年龄：" &lt;&lt; stu3.age  &lt;&lt; " 分数：" &lt;&lt; stu3.score &lt;&lt; endl;
+
+    system("pause");
+
+    return 0;
+&#125;
 <blockquote> 
  <p>总结1：定义结构体时的关键字是struct，不可省略</p> 
 </blockquote> 
@@ -779,51 +788,53 @@ struct student
     int score;    //分数
 &#125;
 
-<p>int main() &#123;</p>
-<pre><code>//结构体数组
-struct student arr[3]=
-&#123;
-    &#123;&quot;张三&quot;,18,80 &#125;,
-    &#123;&quot;李四&quot;,19,60 &#125;,
-    &#123;&quot;王五&quot;,20,70 &#125;
-&#125;;
+int main() &#123;
 
-for (int i = 0; i &amp;lt; 3; i++)
-&#123;
-    cout &amp;lt;&amp;lt; &quot;姓名：&quot; &amp;lt;&amp;lt; arr[i].name &amp;lt;&amp;lt; &quot; 年龄：&quot; &amp;lt;&amp;lt; arr[i].age &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; arr[i].score &amp;lt;&amp;lt; endl;
+    //结构体数组
+    struct student arr[3]=
+    &#123;
+        &#123;"张三",18,80 &#125;,
+        &#123;"李四",19,60 &#125;,
+        &#123;"王五",20,70 &#125;
+    &#125;;
+
+    for (int i = 0; i &lt; 3; i++)
+    &#123;
+        cout &lt;&lt; "姓名：" &lt;&lt; arr[i].name &lt;&lt; " 年龄：" &lt;&lt; arr[i].age &lt;&lt; " 分数：" &lt;&lt; arr[i].score &lt;&lt; endl;
+    &#125;
+
+    system("pause");
+
+    return 0;
 &#125;
-
-system(&quot;pause&quot;);
-
-return 0;</code></pre>
-<p>}</p>
 <h3><a name="t52"></a><a name="t52"></a><a id="84__3237"></a>8.4 结构体指针</h3> 
 <p>**作用：**通过指针访问结构体中的成员</p> 
 <ul><li>利用操作符 <code>-&gt;</code>可以通过结构体指针访问结构体属性</li></ul> 
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//结构体定义
 struct student
-&#123;
+{
     //成员列表
     string name;  //姓名
     int age;      //年龄
     int score;    //分数
-&#125;;
+};
 
 
-<p>int main() &#123;</p>
-<pre><code>struct student stu = &#123; &quot;张三&quot;,18,100, &#125;;
+int main() {
 
-struct student * p = &amp;amp;stu;
+    struct student stu = { "张三",18,100, };
 
-p-&amp;gt;score = 80; //指针通过 -&amp;gt; 操作符可以访问成员
+    struct student * p = &amp;stu;
 
-cout &amp;lt;&amp;lt; &quot;姓名：&quot; &amp;lt;&amp;lt; p-&amp;gt;name &amp;lt;&amp;lt; &quot; 年龄：&quot; &amp;lt;&amp;lt; p-&amp;gt;age &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; p-&amp;gt;score &amp;lt;&amp;lt; endl;
+    p-&gt;score = 80; //指针通过 -&gt; 操作符可以访问成员
 
-system(&quot;pause&quot;);
+    cout &lt;&lt; "姓名：" &lt;&lt; p-&gt;name &lt;&lt; " 年龄：" &lt;&lt; p-&gt;age &lt;&lt; " 分数：" &lt;&lt; p-&gt;score &lt;&lt; endl;
 
-return 0;</code></pre>
-<p>}</p>
+    system("pause");
+
+    return 0;
+}
 <blockquote> 
  <p>总结：结构体指针可以通过 -&gt; 操作符 来访问结构体中的成员</p> 
 </blockquote> 
@@ -833,32 +844,43 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//学生结构体定义
 struct student
-&#123;
+{
     //成员列表
     string name;  //姓名
     int age;      //年龄
     int score;    //分数
-&#125;;
+};
 
-<p>//教师结构体定义<br>struct teacher<br>&#123;<br>    //成员列表<br>    int id; //职工编号<br>    string name;  //教师姓名<br>    int age;   //教师年龄<br>    struct student stu; //子结构体 学生<br>&#125;;</p>
-<p>int main() &#123;</p>
-<pre><code>struct teacher t1;
-t1.id = 10000;
-t1.name = &quot;老王&quot;;
-t1.age = 40;
+//教师结构体定义
+struct teacher
+{
+    //成员列表
+    int id; //职工编号
+    string name;  //教师姓名
+    int age;   //教师年龄
+    struct student stu; //子结构体 学生
+};
 
-t1.stu.name = &quot;张三&quot;;
-t1.stu.age = 18;
-t1.stu.score = 100;
 
-cout &amp;lt;&amp;lt; &quot;教师 职工编号： &quot; &amp;lt;&amp;lt; t1.id &amp;lt;&amp;lt; &quot; 姓名： &quot; &amp;lt;&amp;lt; t1.name &amp;lt;&amp;lt; &quot; 年龄： &quot; &amp;lt;&amp;lt; t1.age &amp;lt;&amp;lt; endl;
+int main() {
 
-cout &amp;lt;&amp;lt; &quot;辅导学员 姓名： &quot; &amp;lt;&amp;lt; t1.stu.name &amp;lt;&amp;lt; &quot; 年龄：&quot; &amp;lt;&amp;lt; t1.stu.age &amp;lt;&amp;lt; &quot; 考试分数： &quot; &amp;lt;&amp;lt; t1.stu.score &amp;lt;&amp;lt; endl;
+    struct teacher t1;
+    t1.id = 10000;
+    t1.name = "老王";
+    t1.age = 40;
 
-system(&quot;pause&quot;);
+    t1.stu.name = "张三";
+    t1.stu.age = 18;
+    t1.stu.score = 100;
 
-return 0;</code></pre>
-<p>}</p>
+    cout &lt;&lt; "教师 职工编号： " &lt;&lt; t1.id &lt;&lt; " 姓名： " &lt;&lt; t1.name &lt;&lt; " 年龄： " &lt;&lt; t1.age &lt;&lt; endl;
+
+    cout &lt;&lt; "辅导学员 姓名： " &lt;&lt; t1.stu.name &lt;&lt; " 年龄：" &lt;&lt; t1.stu.age &lt;&lt; " 考试分数： " &lt;&lt; t1.stu.score &lt;&lt; endl;
+
+    system("pause");
+
+    return 0;
+}
 <p>**总结：**在结构体中可以定义另一个结构体作为成员，用来解决实际问题</p> 
 <h3><a name="t54"></a><a name="t54"></a><a id="86__3354"></a>8.6 结构体做函数参数</h3> 
 <p>**作用：**将结构体作为参数向函数中传递</p> 
@@ -867,31 +889,44 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//学生结构体定义
 struct student
-&#123;
+{
     //成员列表
     string name;  //姓名
     int age;      //年龄
     int score;    //分数
-&#125;;
+};
 
-<p>//值传递<br>void printStudent(student stu )<br>&#123;<br>    stu.age = 28;<br>    cout &lt;&lt; “子函数中 姓名：” &lt;&lt; stu.name &lt;&lt; “ 年龄： “ &lt;&lt; stu.age  &lt;&lt; “ 分数：” &lt;&lt; stu.score &lt;&lt; endl;<br>&#125;</p>
-<p>//地址传递<br>void printStudent2(student *stu)<br>&#123;<br>    stu-&gt;age = 28;<br>    cout &lt;&lt; “子函数中 姓名：” &lt;&lt; stu-&gt;name &lt;&lt; “ 年龄： “ &lt;&lt; stu-&gt;age  &lt;&lt; “ 分数：” &lt;&lt; stu-&gt;score &lt;&lt; endl;<br>&#125;</p>
-<p>int main() &#123;</p>
-<pre><code>student stu = &#123; &quot;张三&quot;,18,100&#125;;
 //值传递
-printStudent(stu);
-cout &amp;lt;&amp;lt; &quot;主函数中 姓名：&quot; &amp;lt;&amp;lt; stu.name &amp;lt;&amp;lt; &quot; 年龄： &quot; &amp;lt;&amp;lt; stu.age &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; stu.score &amp;lt;&amp;lt; endl;
-
-cout &amp;lt;&amp;lt; endl;
+void printStudent(student stu )
+{
+    stu.age = 28;
+    cout &lt;&lt; "子函数中 姓名：" &lt;&lt; stu.name &lt;&lt; " 年龄： " &lt;&lt; stu.age  &lt;&lt; " 分数：" &lt;&lt; stu.score &lt;&lt; endl;
+}
 
 //地址传递
-printStudent2(&amp;amp;stu);
-cout &amp;lt;&amp;lt; &quot;主函数中 姓名：&quot; &amp;lt;&amp;lt; stu.name &amp;lt;&amp;lt; &quot; 年龄： &quot; &amp;lt;&amp;lt; stu.age  &amp;lt;&amp;lt; &quot; 分数：&quot; &amp;lt;&amp;lt; stu.score &amp;lt;&amp;lt; endl;
+void printStudent2(student *stu)
+{
+    stu-&gt;age = 28;
+    cout &lt;&lt; "子函数中 姓名：" &lt;&lt; stu-&gt;name &lt;&lt; " 年龄： " &lt;&lt; stu-&gt;age  &lt;&lt; " 分数：" &lt;&lt; stu-&gt;score &lt;&lt; endl;
+}
 
-system(&quot;pause&quot;);
+int main() {
 
-return 0;</code></pre>
-<p>}</p>
+    student stu = { "张三",18,100};
+    //值传递
+    printStudent(stu);
+    cout &lt;&lt; "主函数中 姓名：" &lt;&lt; stu.name &lt;&lt; " 年龄： " &lt;&lt; stu.age &lt;&lt; " 分数：" &lt;&lt; stu.score &lt;&lt; endl;
+
+    cout &lt;&lt; endl;
+
+    //地址传递
+    printStudent2(&amp;stu);
+    cout &lt;&lt; "主函数中 姓名：" &lt;&lt; stu.name &lt;&lt; " 年龄： " &lt;&lt; stu.age  &lt;&lt; " 分数：" &lt;&lt; stu.score &lt;&lt; endl;
+
+    system("pause");
+
+    return 0;
+}
 <blockquote> 
  <p>总结：如果不想修改主函数中的数据，用值传递，反之用地址传递</p> 
 </blockquote> 
@@ -900,24 +935,31 @@ return 0;</code></pre>
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">//学生结构体定义
 struct student
-&#123;
+{
     //成员列表
     string name;  //姓名
     int age;      //年龄
     int score;    //分数
-&#125;;
+};
 
-<p>//const使用场景<br>void printStudent(const student *stu) //加const防止函数体中的误操作<br>&#123;<br>    //stu-&gt;age = 100; //操作失败，因为加了const修饰<br>    cout &lt;&lt; “姓名：” &lt;&lt; stu-&gt;name &lt;&lt; “ 年龄：” &lt;&lt; stu-&gt;age &lt;&lt; “ 分数：” &lt;&lt; stu-&gt;score &lt;&lt; endl;</p>
-<p>&#125;</p>
-<p>int main() &#123;</p>
-<pre><code>student stu = &#123; &quot;张三&quot;,18,100 &#125;;
+//const使用场景
+void printStudent(const student *stu) //加const防止函数体中的误操作
+{
+    //stu-&gt;age = 100; //操作失败，因为加了const修饰
+    cout &lt;&lt; "姓名：" &lt;&lt; stu-&gt;name &lt;&lt; " 年龄：" &lt;&lt; stu-&gt;age &lt;&lt; " 分数：" &lt;&lt; stu-&gt;score &lt;&lt; endl;
 
-printStudent(&amp;amp;stu);
+}
 
-system(&quot;pause&quot;);
+int main() {
 
-return 0;</code></pre>
-<p>}</p>
+    student stu = { "张三",18,100 };
+
+    printStudent(&amp;stu);
+
+    system("pause");
+
+    return 0;
+}
 <h3><a name="t56"></a><a name="t56"></a><a id="88__3460"></a>8.8 结构体案例</h3> 
 <h4><a id="881_1_3462"></a>8.8.1 案例1</h4> 
 <p><strong>案例描述：</strong></p> 
@@ -927,40 +969,60 @@ return 0;</code></pre>
 <p>最终打印出老师数据以及老师所带的学生数据。</p> 
 <p><strong>示例：</strong></p> 
 <pre class="prettyprint"><code class="prism language-C++ has-numbering" onclick="mdcp.signin(event)" style="position: unset;">struct Student
-&#123;
+{
     string name;
     int score;
-&#125;;
+};
 struct Teacher
-&#123;
+{
     string name;
     Student sArray[5];
-&#125;;
+};
 
-<p>void allocateSpace(Teacher tArray[] , int len)<br>&#123;<br>    string tName = “教师”;<br>    string sName = “学生”;<br>    string nameSeed = “ABCDE”;<br>    for (int i = 0; i &lt; len; i++)<br>    &#123;<br>        tArray[i].name = tName + nameSeed[i];</p>
-<pre><code>    for (int j = 0; j &amp;lt; 5; j++)
-    &#123;
-        tArray[i].sArray[j].name = sName + nameSeed[j];
-        tArray[i].sArray[j].score = rand() % 61 + 40;
-    &#125;
-&#125;</code></pre>
-<p>}</p>
-<p>void printTeachers(Teacher tArray[], int len)<br>{<br>    for (int i = 0; i &lt; len; i++)<br>    {<br>        cout &lt;&lt; tArray[i].name &lt;&lt; endl;<br>        for (int j = 0; j &lt; 5; j++)<br>        {<br>            cout &lt;&lt; “\t姓名：” &lt;&lt; tArray[i].sArray[j].name &lt;&lt; “ 分数：” &lt;&lt; tArray[i].sArray[j].score &lt;&lt; endl;<br>        }<br>    }<br>}</p>
-<p>int main() {</p>
-<pre><code>srand((unsigned int)time(NULL)); //随机数种子 头文件 #include &amp;lt;ctime&amp;gt;
+void allocateSpace(Teacher tArray[] , int len)
+{
+    string tName = "教师";
+    string sName = "学生";
+    string nameSeed = "ABCDE";
+    for (int i = 0; i &lt; len; i++)
+    {
+        tArray[i].name = tName + nameSeed[i];
 
-Teacher tArray[3]; //老师数组
+        for (int j = 0; j &lt; 5; j++)
+        {
+            tArray[i].sArray[j].name = sName + nameSeed[j];
+            tArray[i].sArray[j].score = rand() % 61 + 40;
+        }
+    }
+}
 
-int len = sizeof(tArray) / sizeof(Teacher);
+void printTeachers(Teacher tArray[], int len)
+{
+    for (int i = 0; i &lt; len; i++)
+    {
+        cout &lt;&lt; tArray[i].name &lt;&lt; endl;
+        for (int j = 0; j &lt; 5; j++)
+        {
+            cout &lt;&lt; "\t姓名：" &lt;&lt; tArray[i].sArray[j].name &lt;&lt; " 分数：" &lt;&lt; tArray[i].sArray[j].score &lt;&lt; endl;
+        }
+    }
+}
 
-allocateSpace(tArray, len); //创建数据
+int main() {
 
-printTeachers(tArray, len); //打印数据
+    srand((unsigned int)time(NULL)); //随机数种子 头文件 #include &lt;ctime&gt;
 
-system(&quot;pause&quot;);
+    Teacher tArray[3]; //老师数组
 
-return 0;</code></pre>
+    int len = sizeof(tArray) / sizeof(Teacher);
 
+    allocateSpace(tArray, len); //创建数据
+
+    printTeachers(tArray, len); //打印数据
+
+    system("pause");
+
+    return 0;
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
