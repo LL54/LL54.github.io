@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>C++笔记Ⅰ</title>
-    <url>/2021/01/30/C++%E7%AC%94%E8%AE%B0%E2%91%A0/</url>
+    <url>/2021/01/30/C++%E7%AC%94%E8%AE%B0%E2%85%A0/</url>
     <content><![CDATA[<h2 id="date-2021-01-24-02-37-50"><a href="#date-2021-01-24-02-37-50" class="headerlink" title="date: 2021-01-24 02:37:50"></a>date: 2021-01-24 02:37:50</h2><p>学习目标：C++基础语法入门</p>
 <ol>
 <li>   C++初识<br>（1）    程序的注释<br>（2）    变量<br>（3）    常量<br>（4）    关键字<br>（5）    标识符命名规则</li>
@@ -54,8 +54,149 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Linux 笔记Ⅰ</title>
+    <url>/2021/01/31/Linux%20%E7%AC%94%E8%AE%B0%E2%85%A0/</url>
+    <content><![CDATA[<hr>
+<h1 id="Linux-是什么？"><a href="#Linux-是什么？" class="headerlink" title="Linux 是什么？"></a>Linux 是什么？</h1><p>简单来说， Linux 是一个基于 Unix 的开源操作系统。</p>
+<p>就像 Windows 或者 Mac OS 一样。</p>
+<p><strong>Linux</strong>是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。**</p>
+<h1 id="Windows-和-Linux-有什么区别？"><a href="#Windows-和-Linux-有什么区别？" class="headerlink" title="Windows 和 Linux 有什么区别？"></a>Windows 和 Linux 有什么区别？</h1><p><strong>1. 免费与收费</strong></p>
+<ul>
+<li>最新正版 Windows 10，需要付费购买；</li>
+<li>Linux 免费或少许费用。</li>
+</ul>
+<p><strong>2. 软件与支持</strong></p>
+<ul>
+<li>Windows 平台：数量和质量的优势，不过大部分为收费软件；由微软官方提供重要支持和服务；</li>
+<li>Linux 平台：大都为开源自由软件，用户可以修改定制和再发布，由于基本免费没有资金支持，部分软件质量和体验欠缺；由全球所有的 Linux 开发者和自由软件社区提供支持。</li>
+</ul>
+<p><strong>3. 安全性</strong></p>
+<ul>
+<li>Windows 平台：三天两头打补丁安装系统安全更新，还是会中病毒木马；</li>
+<li>Linux 平台：要说 Linux 没有安全问题，那当然是不可能的，这一点仁者见仁智者见智，相对来说肯定比 Windows 平台要更加安全，使用 Linux 你也不用装某杀毒、某毒霸。</li>
+</ul>
+<p><strong>4. 使用习惯</strong></p>
+<ul>
+<li>Windows：普通用户基本都是纯图形界面下操作使用，依靠鼠标和键盘完成一切操作，用户上手容易，入门简单；</li>
+<li>Linux：兼具图形界面操作（需要使用带有桌面环境的发行版）和完全的命令行操作，可以只用键盘完成一切操作，新手入门较困难，需要一些学习和指导（这正是我们要做的事情），一旦熟练之后效率极高。</li>
+</ul>
+<p><strong>5. 可定制性</strong></p>
+<ul>
+<li>Windows：这些年之前算是全封闭的，系统可定制性很差；</li>
+<li>Linux：你想怎么做就怎么做，Windows 能做到得它都能，Windows 做不到的，它也能。</li>
+</ul>
+<p><strong>6. 应用范畴</strong></p>
+<p>或许你之前不知道 Linux ，要知道，你之前在 Windows 使用百度、谷歌，上淘宝，聊 QQ 时，支撑这些软件和服务的，是后台成千上万的 Linux 服务器主机，它们时时刻刻都在忙碌地进行着数据处理和运算，可以说世界上大部分软件和服务都是运行在 Linux 之上的。</p>
+<p><strong>7. Windows 没有的</strong></p>
+<ul>
+<li>稳定的系统</li>
+<li>安全性和漏洞的快速修补</li>
+<li>多用户</li>
+<li>用户和用户组的规划</li>
+<li>相对较少的系统资源占用</li>
+<li>可定制裁剪，移植到嵌入式平台（如安卓设备）</li>
+<li>可选择的多种图形用户界面（如 GNOME，KDE）</li>
+</ul>
+<p><strong>8. Linux 没有的</strong></p>
+<ul>
+<li>特定的支持厂商</li>
+<li>足够的游戏娱乐支持度</li>
+<li>足够的专业软件支持度</li>
+</ul>
+<h1 id="Linux-常用操作命令"><a href="#Linux-常用操作命令" class="headerlink" title="Linux 常用操作命令"></a>Linux 常用操作命令</h1><h2 id="1-1-Linux系统的文件结构"><a href="#1-1-Linux系统的文件结构" class="headerlink" title="1.1 Linux系统的文件结构"></a>1.1 Linux系统的文件结构</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bin        二进制文件，系统常规命令</span><br><span class="line">&#x2F;boot       系统启动分区，系统启动时读取的文件</span><br><span class="line">&#x2F;dev        设备文件</span><br><span class="line">&#x2F;etc        大多数配置文件</span><br><span class="line">&#x2F;home       普通用户的家目录</span><br><span class="line">&#x2F;lib        32位函数库</span><br><span class="line">&#x2F;lib64      64位库</span><br><span class="line">&#x2F;media      手动临时挂载点</span><br><span class="line">&#x2F;mnt        手动临时挂载点</span><br><span class="line">&#x2F;opt        第三方软件安装位置</span><br><span class="line">&#x2F;proc       进程信息及硬件信息</span><br><span class="line">&#x2F;root       临时设备的默认挂载点</span><br><span class="line">&#x2F;sbin       系统管理命令</span><br><span class="line">&#x2F;srv        数据</span><br><span class="line">&#x2F;var        数据</span><br><span class="line">&#x2F;sys        内核相关信息</span><br><span class="line">&#x2F;tmp        临时文件</span><br><span class="line">&#x2F;usr        用户相关设定</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-Linux系统命令行的含义"><a href="#1-2-Linux系统命令行的含义" class="headerlink" title="1.2 Linux系统命令行的含义"></a>1.2 Linux系统命令行的含义</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例：root@app00:~# </span><br><span class="line">root    &#x2F;&#x2F;用户名，root为超级用户</span><br><span class="line">@       &#x2F;&#x2F;分隔符</span><br><span class="line">app00   &#x2F;&#x2F;主机名称</span><br><span class="line">~       &#x2F;&#x2F;当前所在目录，默认用户目录为~，会随着目录切换而变化，例如：（root@app00:&#x2F;bin# ，当前位置在bin目录下）</span><br><span class="line">#       &#x2F;&#x2F;表示当前用户是超级用户，普通用户为$，例如：（&quot;yao@app00:&#x2F;root$&quot; ，表示使用用户&quot;yao&quot;访问&#x2F;root文件夹）</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-命令的组成"><a href="#1-3-命令的组成" class="headerlink" title="1.3 命令的组成"></a>1.3 命令的组成</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例：命令 参数名 参数值</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2-1-重启系统"><a href="#2-1-重启系统" class="headerlink" title="2.1 重启系统"></a>2.1 重启系统</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)立刻关机</span><br><span class="line">  shutdown -h now 或者 poweroff</span><br><span class="line">(2)两分钟后关机</span><br><span class="line">  shutdown -h 2</span><br></pre></td></tr></table></figure>
+<h2 id="2-2-关闭系统"><a href="#2-2-关闭系统" class="headerlink" title="2.2 关闭系统"></a>2.2 关闭系统</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)立刻重启</span><br><span class="line">  shutdown -r now 或者 reboot</span><br><span class="line">(2)两分钟后重启</span><br><span class="line">  shutdown -r 2 </span><br></pre></td></tr></table></figure>
+<h2 id="2-3-帮助命令（help）"><a href="#2-3-帮助命令（help）" class="headerlink" title="2.3 帮助命令（help）"></a>2.3 帮助命令（help）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ifconfig  --help     &#x2F;&#x2F;查看 ifconfig 命令的用法</span><br></pre></td></tr></table></figure>
+<h2 id="2-4-命令说明书（man）"><a href="#2-4-命令说明书（man）" class="headerlink" title="2.4 命令说明书（man）"></a>2.4 命令说明书（man）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">man shutdown         &#x2F;&#x2F;打开命令说明后，可按&quot;q&quot;键退出</span><br></pre></td></tr></table></figure>
+<h2 id="2-5-切换用户（su）"><a href="#2-5-切换用户（su）" class="headerlink" title="2.5 切换用户（su）"></a>2.5 切换用户（su）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">su yao               &#x2F;&#x2F;切换为用户&quot;yao&quot;,输入后回车需要输入该用户的密码</span><br><span class="line">exit                 &#x2F;&#x2F;退出当前用户</span><br></pre></td></tr></table></figure>
+<h2 id="3-1-切换目录（cd）"><a href="#3-1-切换目录（cd）" class="headerlink" title="3.1 切换目录（cd）"></a>3.1 切换目录（cd）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;                 &#x2F;&#x2F;切换到根目录</span><br><span class="line">cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录</span><br><span class="line">cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..</span><br><span class="line">cd ~                 &#x2F;&#x2F;切换到home目录</span><br><span class="line">cd -                 &#x2F;&#x2F;切换到上次访问的目录</span><br><span class="line">cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错</span><br><span class="line">cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，直接切换到目标目录，输入过程中可以使用tab键快速补全</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-查看目录（ls）"><a href="#3-2-查看目录（ls）" class="headerlink" title="3.2 查看目录（ls）"></a>3.2 查看目录（ls）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls                   &#x2F;&#x2F;查看当前目录下的所有目录和文件</span><br><span class="line">ls -a                &#x2F;&#x2F;查看当前目录下的所有目录和文件（包括隐藏的文件）</span><br><span class="line">ls -l                &#x2F;&#x2F;列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令&quot;ll&quot;效果一样</span><br><span class="line">ls &#x2F;bin              &#x2F;&#x2F;查看指定目录下的所有目录和文件 </span><br></pre></td></tr></table></figure>
+<h2 id="3-3-创建目录（mkdir）"><a href="#3-3-创建目录（mkdir）" class="headerlink" title="3.3 创建目录（mkdir）"></a>3.3 创建目录（mkdir）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir tools          &#x2F;&#x2F;在当前目录下创建一个名为tools的目录</span><br><span class="line">mkdir &#x2F;bin&#x2F;tools     &#x2F;&#x2F;在指定目录下创建一个名为tools的目录</span><br></pre></td></tr></table></figure>
+<h2 id="3-3-删除目录与文件（rm）"><a href="#3-3-删除目录与文件（rm）" class="headerlink" title="3.3 删除目录与文件（rm）"></a>3.3 删除目录与文件（rm）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 文件名              &#x2F;&#x2F;删除当前目录下的文件</span><br><span class="line">rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）</span><br><span class="line">rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录</span><br><span class="line">rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）</span><br><span class="line">rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除</span><br><span class="line">rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】</span><br></pre></td></tr></table></figure>
+<h2 id="3-4-修改目录（mv）"><a href="#3-4-修改目录（mv）" class="headerlink" title="3.4 修改目录（mv）"></a>3.4 修改目录（mv）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv 当前目录名 新目录名        &#x2F;&#x2F;修改目录名，同样适用与文件操作</span><br><span class="line">mv &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt       &#x2F;&#x2F;将&#x2F;usr&#x2F;tmp目录下的tool目录剪切到 &#x2F;opt目录下面</span><br><span class="line">mv -r &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt    &#x2F;&#x2F;递归剪切目录中所有文件和文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="3-5-拷贝目录（cp）"><a href="#3-5-拷贝目录（cp）" class="headerlink" title="3.5 拷贝目录（cp）"></a>3.5 拷贝目录（cp）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt       &#x2F;&#x2F;将&#x2F;usr&#x2F;tmp目录下的tool目录复制到 &#x2F;opt目录下面</span><br><span class="line">cp -r &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt    &#x2F;&#x2F;递归剪复制目录中所有文件和文件夹</span><br></pre></td></tr></table></figure>
+<h2 id="3-6-搜索目录（find）"><a href="#3-6-搜索目录（find）" class="headerlink" title="3.6 搜索目录（find）"></a>3.6 搜索目录（find）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find &#x2F;bin -name &#39;a*&#39;        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</span><br></pre></td></tr></table></figure>
+<h2 id="3-7-查看当前目录（pwd）"><a href="#3-7-查看当前目录（pwd）" class="headerlink" title="3.7 查看当前目录（pwd）"></a>3.7 查看当前目录（pwd）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd                         &#x2F;&#x2F;显示当前位置路径</span><br></pre></td></tr></table></figure>
+<h2 id="4-1-新增文件（touch）"><a href="#4-1-新增文件（touch）" class="headerlink" title="4.1 新增文件（touch）"></a>4.1 新增文件（touch）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">touch  a.txt         &#x2F;&#x2F;在当前目录下创建名为a的txt文件（文件不存在），如果文件存在，将文件时间属性修改为当前系统时间</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-删除文件（rm）"><a href="#4-2-删除文件（rm）" class="headerlink" title="4.2 删除文件（rm）"></a>4.2 删除文件（rm）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 文件名              &#x2F;&#x2F;删除当前目录下的文件</span><br><span class="line">rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-编辑文件（vi、vim）"><a href="#4-3-编辑文件（vi、vim）" class="headerlink" title="4.3 编辑文件（vi、vim）"></a>4.3 编辑文件（vi、vim）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi 文件名              &#x2F;&#x2F;打开需要编辑的文件</span><br><span class="line">--进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）</span><br><span class="line">命令模式</span><br><span class="line">-刚进入文件就是命令模式，通过方向键控制光标位置，</span><br><span class="line">-使用命令&quot;dd&quot;删除当前整行</span><br><span class="line">-使用命令&quot;&#x2F;字段&quot;进行查找</span><br><span class="line">-按&quot;i&quot;在光标所在字符前开始插入</span><br><span class="line">-按&quot;a&quot;在光标所在字符后开始插入</span><br><span class="line">-按&quot;o&quot;在光标所在行的下面另起一新行插入</span><br><span class="line">-按&quot;：&quot;进入底行模式</span><br><span class="line">插入模式</span><br><span class="line">-此时可以对文件内容进行编辑，左下角会显示 &quot;-- 插入 --&quot;&quot;</span><br><span class="line">-按&quot;ESC&quot;进入底行模式</span><br><span class="line">底行模式</span><br><span class="line">-退出编辑：      :q</span><br><span class="line">-强制退出：      :q!</span><br><span class="line">-保存并退出：    :wq</span><br><span class="line">## 操作步骤示例 ##</span><br><span class="line">1.保存文件：按&quot;ESC&quot; -&gt; 输入&quot;:&quot; -&gt; 输入&quot;wq&quot;,回车     &#x2F;&#x2F;保存并退出编辑</span><br><span class="line">2.取消操作：按&quot;ESC&quot; -&gt; 输入&quot;:&quot; -&gt; 输入&quot;q!&quot;,回车     &#x2F;&#x2F;撤销本次修改并退出编辑</span><br><span class="line">## 补充 ##</span><br><span class="line">vim +10 filename.txt                   &#x2F;&#x2F;打开文件并跳到第10行</span><br><span class="line">vim -R &#x2F;etc&#x2F;passwd                     &#x2F;&#x2F;以只读模式打开文件</span><br></pre></td></tr></table></figure>
+<h2 id="4-4-查看文件"><a href="#4-4-查看文件" class="headerlink" title="4.4 查看文件"></a>4.4 查看文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat a.txt          &#x2F;&#x2F;查看文件最后一屏内容</span><br><span class="line">less a.txt         &#x2F;&#x2F;PgUp向上翻页，PgDn向下翻页，&quot;q&quot;退出查看</span><br><span class="line">more a.txt         &#x2F;&#x2F;显示百分比，回车查看下一行，空格查看下一页，&quot;q&quot;退出查看</span><br><span class="line">tail -100 a.txt    &#x2F;&#x2F;查看文件的后100行，&quot;Ctrl+C&quot;退出查看</span><br></pre></td></tr></table></figure>
+<h1 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h1><h2 id="Vim常用操作"><a href="#Vim常用操作" class="headerlink" title="Vim常用操作"></a>Vim常用操作</h2><p><strong>Vim没有菜单，只有命令</strong><br><strong>Vim的工作模式有三种：</strong></p>
+<ul>
+<li><p><strong>第一种：命令模式 vi/vim+文件名 进入命令模式 不可以输入文字，只能识别命令</strong><br><strong>插入命令：<br>a：在光标所在字符后插入<br>A：在光标所在行尾插入<br>i：在光标所在字符前插入<br>I：在光标所在行行首插入<br>o：在光标下插入新行<br>O：在光标上插入新行</strong></p>
+</li>
+<li><p><strong>第二种：插入模式 按i/a/o进入，可以继续输入文字，按Esc退出</strong></p>
+</li>
+<li><p>第三种：编辑模式 在命令模式下按:，即可进入 编辑模式 可以输入编辑命令 比如：保存并退出，加行号</p>
+<p>定位命令：</p>
+<ul>
+<li>:set nu <strong>设置行号</strong></li>
+<li>:set nonu <strong>取消行号</strong></li>
+<li>gg <strong>到第一行</strong></li>
+<li>G <strong>到最后一行</strong></li>
+<li>nG <strong>到第n行</strong></li>
+<li>: n <strong>到第n行 和上面一样的格式</strong></li>
+<li>$ <strong>移动到行尾</strong></li>
+<li>0 <strong>移动到行首</strong></li>
+</ul>
+</li>
+<li><p>删除命令：</p>
+<ul>
+<li>x <strong>删除光标所在处的字符</strong></li>
+<li>nx <strong>删除光标所在处后n个字符</strong></li>
+<li>nd <strong>删除光标所在行</strong></li>
+<li>ndd <strong>删除n行</strong></li>
+<li>dG <strong>删除光标所在行到文件末尾的内容</strong></li>
+<li>D <strong>删除光标所在处到行尾内容</strong></li>
+<li>:n1,n2d <strong>删除指定范围的行 n1-n2的行全部被删除</strong></li>
+</ul>
+</li>
+<li><p>复制和剪切命令：</p>
+<ul>
+<li>yy <strong>复制当前行</strong></li>
+<li>nyy <strong>复制当前行一下n行</strong></li>
+<li>dd <strong>剪切当前行</strong></li>
+<li>ndd <strong>剪切当前行以下n行</strong></li>
+<li>p <strong>粘贴在当前光标所在行下</strong></li>
+<li>P <strong>粘贴在当前光标所在行上</strong></li>
+</ul>
+</li>
+<li><p>替换或取消命令：</p>
+<ul>
+<li>r <strong>替换光标所在处字符</strong></li>
+<li>R <strong>从光标所在处开始替换字符，按Esc结束</strong></li>
+<li>u <strong>取消上一不操作</strong></li>
+</ul>
+</li>
+<li><p>搜索和搜索替换命令：</p>
+<ul>
+<li>/string <strong>搜索指定字符串string 与less命令操作类似</strong><br><strong>搜索时忽略大小写:set ic<br>搜索时不忽略大小写:set noic</strong></li>
+<li>n <strong>搜索指定字符串的下一个出现位置</strong></li>
+<li>:%s/要替换的字符串/替换的新的字符串/g 不询问<br><strong>把/g换成/c 进行询问确认<br>全文替换指定字符串</strong></li>
+<li>:n1,n2s/要替换的字符串/替换的新的字符串/g<br><strong>在一定范围内替换指定字符串</strong></li>
+</ul>
+</li>
+<li><p><strong>保存和退出命令：</strong><br>:w <strong>保存修改</strong><br>:w new_filename <strong>另存为指定文件</strong><br>:wq <strong>保存修改并退出</strong><br>ZZ <strong>快捷键，保存修改退出</strong><br>:q! <strong>不保存修改退出</strong><br>:wq! <strong>保存修改并退出（只有文件所有者以及root可以使用）适合保存root只有只读权限的文件</strong></p>
+</li>
+</ul>
+<h2 id="Vim使用技巧"><a href="#Vim使用技巧" class="headerlink" title="Vim使用技巧"></a>Vim使用技巧</h2><p><strong>在Vim中有许多黑科技小技巧便于我们操作，我总结了以下几天最为方便的操作，以供大家学习：</strong></p>
+<ul>
+<li>:r !命令 <strong>当前的Vim文档导入命令执行结果</strong><br><strong>例子：<br>:r !date 直接把当前时间导入当前的Vim文档</strong></li>
+<li>map [快捷键] [触发命令] 定义快捷键<br><strong>其中快捷键需要按ctrl+v+需要设定的键位，设定好之后颜色会变，比如想设定ctrl p为快捷键那么就按ctrl+v+p 会出现^P ，不能按shift+6出现的^,这两个虽然看起来一样但是颜色不一样<br>触发命令按需要执行的命令的先后顺序来排列，比如给脚本加注释#键就可以把[触发命令]设为I#<br>例子：<br>map ^P I# 给脚本行首加#注释</strong></li>
+<li>:n1,n2s/^/#/g <strong>替换行首字符为#，连续行的注释，不过需先设置行号 :set nu</strong></li>
+<li>:n1,n2s/^#/ /g <strong>取消注释</strong></li>
+<li>:n1,n2s/^/ \ / \ //g <strong>给行首加// 需先设置行号 :set nu</strong><br><strong>因为系统无法识别太多的，所以需要在//每一条/前都加转义符\，\表达命令的正在含义，比如ls /etc 里面的文件会有颜色，但是\ls 就没有，他是表达执行ls真正含义不执行ls别名</strong></li>
+<li>ab [a内容][b内容]</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>C++笔记Ⅱ</title>
-    <url>/2021/01/30/C++%E7%AC%94%E8%AE%B0%E2%91%A1/</url>
+    <url>/2021/01/30/C++%E7%AC%94%E8%AE%B0%E2%85%A1/</url>
     <content><![CDATA[<h2 id="date-2021-01-24-02-53-50"><a href="#date-2021-01-24-02-53-50" class="headerlink" title="date: 2021-01-24 02:53:50"></a>date: 2021-01-24 02:53:50</h2><h1 id="5-数组"><a href="#5-数组" class="headerlink" title="5.数组"></a>5.数组</h1><h2 id="5-1-概述"><a href="#5-1-概述" class="headerlink" title="5.1 概述"></a>5.1 概述</h2><p>所谓数组，就是一个集合，里面存放了相同类型的数据元素</p>
 <p><strong>特点1：</strong>数组中的每个数据元素都是相同的数据类型</p>
 <p><strong>特点2：</strong>数组是由连续的内存位置组成的</p>
@@ -884,147 +1025,6 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">char</span> m_Name[<span class="number">64</span>];</span><br><span class="line">	<span class="keyword">int</span> m_Age;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">ifstream <span class="title">ifs</span><span class="params">(<span class="string">&quot;person.txt&quot;</span>, ios::in | ios::binary)</span></span>;</span><br><span class="line">	<span class="keyword">if</span> (!ifs.is_open())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;文件打开失败&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	Person p;</span><br><span class="line">	ifs.read((<span class="keyword">char</span> *)&amp;p, <span class="keyword">sizeof</span>(p));</span><br><span class="line"></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;姓名： &quot;</span> &lt;&lt; p.m_Name &lt;&lt; <span class="string">&quot; 年龄： &quot;</span> &lt;&lt; p.m_Age &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	test01();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>文件输入流对象 可以通过read函数，以二进制方式读数据</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Linux 笔记Ⅰ</title>
-    <url>/2021/01/31/Linux%20%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<hr>
-<h1 id="Linux-是什么？"><a href="#Linux-是什么？" class="headerlink" title="Linux 是什么？"></a>Linux 是什么？</h1><p>简单来说， Linux 是一个基于 Unix 的开源操作系统。</p>
-<p>就像 Windows 或者 Mac OS 一样。</p>
-<p><strong>Linux</strong>是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。**</p>
-<h1 id="Windows-和-Linux-有什么区别？"><a href="#Windows-和-Linux-有什么区别？" class="headerlink" title="Windows 和 Linux 有什么区别？"></a>Windows 和 Linux 有什么区别？</h1><p><strong>1. 免费与收费</strong></p>
-<ul>
-<li>最新正版 Windows 10，需要付费购买；</li>
-<li>Linux 免费或少许费用。</li>
-</ul>
-<p><strong>2. 软件与支持</strong></p>
-<ul>
-<li>Windows 平台：数量和质量的优势，不过大部分为收费软件；由微软官方提供重要支持和服务；</li>
-<li>Linux 平台：大都为开源自由软件，用户可以修改定制和再发布，由于基本免费没有资金支持，部分软件质量和体验欠缺；由全球所有的 Linux 开发者和自由软件社区提供支持。</li>
-</ul>
-<p><strong>3. 安全性</strong></p>
-<ul>
-<li>Windows 平台：三天两头打补丁安装系统安全更新，还是会中病毒木马；</li>
-<li>Linux 平台：要说 Linux 没有安全问题，那当然是不可能的，这一点仁者见仁智者见智，相对来说肯定比 Windows 平台要更加安全，使用 Linux 你也不用装某杀毒、某毒霸。</li>
-</ul>
-<p><strong>4. 使用习惯</strong></p>
-<ul>
-<li>Windows：普通用户基本都是纯图形界面下操作使用，依靠鼠标和键盘完成一切操作，用户上手容易，入门简单；</li>
-<li>Linux：兼具图形界面操作（需要使用带有桌面环境的发行版）和完全的命令行操作，可以只用键盘完成一切操作，新手入门较困难，需要一些学习和指导（这正是我们要做的事情），一旦熟练之后效率极高。</li>
-</ul>
-<p><strong>5. 可定制性</strong></p>
-<ul>
-<li>Windows：这些年之前算是全封闭的，系统可定制性很差；</li>
-<li>Linux：你想怎么做就怎么做，Windows 能做到得它都能，Windows 做不到的，它也能。</li>
-</ul>
-<p><strong>6. 应用范畴</strong></p>
-<p>或许你之前不知道 Linux ，要知道，你之前在 Windows 使用百度、谷歌，上淘宝，聊 QQ 时，支撑这些软件和服务的，是后台成千上万的 Linux 服务器主机，它们时时刻刻都在忙碌地进行着数据处理和运算，可以说世界上大部分软件和服务都是运行在 Linux 之上的。</p>
-<p><strong>7. Windows 没有的</strong></p>
-<ul>
-<li>稳定的系统</li>
-<li>安全性和漏洞的快速修补</li>
-<li>多用户</li>
-<li>用户和用户组的规划</li>
-<li>相对较少的系统资源占用</li>
-<li>可定制裁剪，移植到嵌入式平台（如安卓设备）</li>
-<li>可选择的多种图形用户界面（如 GNOME，KDE）</li>
-</ul>
-<p><strong>8. Linux 没有的</strong></p>
-<ul>
-<li>特定的支持厂商</li>
-<li>足够的游戏娱乐支持度</li>
-<li>足够的专业软件支持度</li>
-</ul>
-<h1 id="Linux-常用操作命令"><a href="#Linux-常用操作命令" class="headerlink" title="Linux 常用操作命令"></a>Linux 常用操作命令</h1><h2 id="1-1-Linux系统的文件结构"><a href="#1-1-Linux系统的文件结构" class="headerlink" title="1.1 Linux系统的文件结构"></a>1.1 Linux系统的文件结构</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;bin        二进制文件，系统常规命令</span><br><span class="line">&#x2F;boot       系统启动分区，系统启动时读取的文件</span><br><span class="line">&#x2F;dev        设备文件</span><br><span class="line">&#x2F;etc        大多数配置文件</span><br><span class="line">&#x2F;home       普通用户的家目录</span><br><span class="line">&#x2F;lib        32位函数库</span><br><span class="line">&#x2F;lib64      64位库</span><br><span class="line">&#x2F;media      手动临时挂载点</span><br><span class="line">&#x2F;mnt        手动临时挂载点</span><br><span class="line">&#x2F;opt        第三方软件安装位置</span><br><span class="line">&#x2F;proc       进程信息及硬件信息</span><br><span class="line">&#x2F;root       临时设备的默认挂载点</span><br><span class="line">&#x2F;sbin       系统管理命令</span><br><span class="line">&#x2F;srv        数据</span><br><span class="line">&#x2F;var        数据</span><br><span class="line">&#x2F;sys        内核相关信息</span><br><span class="line">&#x2F;tmp        临时文件</span><br><span class="line">&#x2F;usr        用户相关设定</span><br></pre></td></tr></table></figure>
-<h2 id="1-2-Linux系统命令行的含义"><a href="#1-2-Linux系统命令行的含义" class="headerlink" title="1.2 Linux系统命令行的含义"></a>1.2 Linux系统命令行的含义</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例：root@app00:~# </span><br><span class="line">root    &#x2F;&#x2F;用户名，root为超级用户</span><br><span class="line">@       &#x2F;&#x2F;分隔符</span><br><span class="line">app00   &#x2F;&#x2F;主机名称</span><br><span class="line">~       &#x2F;&#x2F;当前所在目录，默认用户目录为~，会随着目录切换而变化，例如：（root@app00:&#x2F;bin# ，当前位置在bin目录下）</span><br><span class="line">#       &#x2F;&#x2F;表示当前用户是超级用户，普通用户为$，例如：（&quot;yao@app00:&#x2F;root$&quot; ，表示使用用户&quot;yao&quot;访问&#x2F;root文件夹）</span><br></pre></td></tr></table></figure>
-<h2 id="1-3-命令的组成"><a href="#1-3-命令的组成" class="headerlink" title="1.3 命令的组成"></a>1.3 命令的组成</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">示例：命令 参数名 参数值</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="2-1-重启系统"><a href="#2-1-重启系统" class="headerlink" title="2.1 重启系统"></a>2.1 重启系统</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)立刻关机</span><br><span class="line">  shutdown -h now 或者 poweroff</span><br><span class="line">(2)两分钟后关机</span><br><span class="line">  shutdown -h 2</span><br></pre></td></tr></table></figure>
-<h2 id="2-2-关闭系统"><a href="#2-2-关闭系统" class="headerlink" title="2.2 关闭系统"></a>2.2 关闭系统</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(1)立刻重启</span><br><span class="line">  shutdown -r now 或者 reboot</span><br><span class="line">(2)两分钟后重启</span><br><span class="line">  shutdown -r 2 </span><br></pre></td></tr></table></figure>
-<h2 id="2-3-帮助命令（help）"><a href="#2-3-帮助命令（help）" class="headerlink" title="2.3 帮助命令（help）"></a>2.3 帮助命令（help）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ifconfig  --help     &#x2F;&#x2F;查看 ifconfig 命令的用法</span><br></pre></td></tr></table></figure>
-<h2 id="2-4-命令说明书（man）"><a href="#2-4-命令说明书（man）" class="headerlink" title="2.4 命令说明书（man）"></a>2.4 命令说明书（man）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">man shutdown         &#x2F;&#x2F;打开命令说明后，可按&quot;q&quot;键退出</span><br></pre></td></tr></table></figure>
-<h2 id="2-5-切换用户（su）"><a href="#2-5-切换用户（su）" class="headerlink" title="2.5 切换用户（su）"></a>2.5 切换用户（su）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">su yao               &#x2F;&#x2F;切换为用户&quot;yao&quot;,输入后回车需要输入该用户的密码</span><br><span class="line">exit                 &#x2F;&#x2F;退出当前用户</span><br></pre></td></tr></table></figure>
-<h2 id="3-1-切换目录（cd）"><a href="#3-1-切换目录（cd）" class="headerlink" title="3.1 切换目录（cd）"></a>3.1 切换目录（cd）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd &#x2F;                 &#x2F;&#x2F;切换到根目录</span><br><span class="line">cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录</span><br><span class="line">cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..</span><br><span class="line">cd ~                 &#x2F;&#x2F;切换到home目录</span><br><span class="line">cd -                 &#x2F;&#x2F;切换到上次访问的目录</span><br><span class="line">cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错</span><br><span class="line">cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，直接切换到目标目录，输入过程中可以使用tab键快速补全</span><br></pre></td></tr></table></figure>
-<h2 id="3-2-查看目录（ls）"><a href="#3-2-查看目录（ls）" class="headerlink" title="3.2 查看目录（ls）"></a>3.2 查看目录（ls）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ls                   &#x2F;&#x2F;查看当前目录下的所有目录和文件</span><br><span class="line">ls -a                &#x2F;&#x2F;查看当前目录下的所有目录和文件（包括隐藏的文件）</span><br><span class="line">ls -l                &#x2F;&#x2F;列表查看当前目录下的所有目录和文件（列表查看，显示更多信息），与命令&quot;ll&quot;效果一样</span><br><span class="line">ls &#x2F;bin              &#x2F;&#x2F;查看指定目录下的所有目录和文件 </span><br></pre></td></tr></table></figure>
-<h2 id="3-3-创建目录（mkdir）"><a href="#3-3-创建目录（mkdir）" class="headerlink" title="3.3 创建目录（mkdir）"></a>3.3 创建目录（mkdir）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir tools          &#x2F;&#x2F;在当前目录下创建一个名为tools的目录</span><br><span class="line">mkdir &#x2F;bin&#x2F;tools     &#x2F;&#x2F;在指定目录下创建一个名为tools的目录</span><br></pre></td></tr></table></figure>
-<h2 id="3-3-删除目录与文件（rm）"><a href="#3-3-删除目录与文件（rm）" class="headerlink" title="3.3 删除目录与文件（rm）"></a>3.3 删除目录与文件（rm）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 文件名              &#x2F;&#x2F;删除当前目录下的文件</span><br><span class="line">rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）</span><br><span class="line">rm -r 文件夹名         &#x2F;&#x2F;递归删除当前目录下此名的目录</span><br><span class="line">rm -rf 文件夹名        &#x2F;&#x2F;递归删除当前目录下此名的目录（不询问）</span><br><span class="line">rm -rf *              &#x2F;&#x2F;将当前目录下的所有目录和文件全部删除</span><br><span class="line">rm -rf &#x2F;*             &#x2F;&#x2F;将根目录下的所有文件全部删除【慎用！相当于格式化系统】</span><br></pre></td></tr></table></figure>
-<h2 id="3-4-修改目录（mv）"><a href="#3-4-修改目录（mv）" class="headerlink" title="3.4 修改目录（mv）"></a>3.4 修改目录（mv）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mv 当前目录名 新目录名        &#x2F;&#x2F;修改目录名，同样适用与文件操作</span><br><span class="line">mv &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt       &#x2F;&#x2F;将&#x2F;usr&#x2F;tmp目录下的tool目录剪切到 &#x2F;opt目录下面</span><br><span class="line">mv -r &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt    &#x2F;&#x2F;递归剪切目录中所有文件和文件夹</span><br></pre></td></tr></table></figure>
-<h2 id="3-5-拷贝目录（cp）"><a href="#3-5-拷贝目录（cp）" class="headerlink" title="3.5 拷贝目录（cp）"></a>3.5 拷贝目录（cp）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cp &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt       &#x2F;&#x2F;将&#x2F;usr&#x2F;tmp目录下的tool目录复制到 &#x2F;opt目录下面</span><br><span class="line">cp -r &#x2F;usr&#x2F;tmp&#x2F;tool &#x2F;opt    &#x2F;&#x2F;递归剪复制目录中所有文件和文件夹</span><br></pre></td></tr></table></figure>
-<h2 id="3-6-搜索目录（find）"><a href="#3-6-搜索目录（find）" class="headerlink" title="3.6 搜索目录（find）"></a>3.6 搜索目录（find）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">find &#x2F;bin -name &#39;a*&#39;        &#x2F;&#x2F;查找&#x2F;bin目录下的所有以a开头的文件或者目录</span><br></pre></td></tr></table></figure>
-<h2 id="3-7-查看当前目录（pwd）"><a href="#3-7-查看当前目录（pwd）" class="headerlink" title="3.7 查看当前目录（pwd）"></a>3.7 查看当前目录（pwd）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pwd                         &#x2F;&#x2F;显示当前位置路径</span><br></pre></td></tr></table></figure>
-<h2 id="4-1-新增文件（touch）"><a href="#4-1-新增文件（touch）" class="headerlink" title="4.1 新增文件（touch）"></a>4.1 新增文件（touch）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">touch  a.txt         &#x2F;&#x2F;在当前目录下创建名为a的txt文件（文件不存在），如果文件存在，将文件时间属性修改为当前系统时间</span><br></pre></td></tr></table></figure>
-<h2 id="4-2-删除文件（rm）"><a href="#4-2-删除文件（rm）" class="headerlink" title="4.2 删除文件（rm）"></a>4.2 删除文件（rm）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm 文件名              &#x2F;&#x2F;删除当前目录下的文件</span><br><span class="line">rm -f 文件名           &#x2F;&#x2F;删除当前目录的的文件（不询问）</span><br></pre></td></tr></table></figure>
-<h2 id="4-3-编辑文件（vi、vim）"><a href="#4-3-编辑文件（vi、vim）" class="headerlink" title="4.3 编辑文件（vi、vim）"></a>4.3 编辑文件（vi、vim）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi 文件名              &#x2F;&#x2F;打开需要编辑的文件</span><br><span class="line">--进入后，操作界面有三种模式：命令模式（command mode）、插入模式（Insert mode）和底行模式（last line mode）</span><br><span class="line">命令模式</span><br><span class="line">-刚进入文件就是命令模式，通过方向键控制光标位置，</span><br><span class="line">-使用命令&quot;dd&quot;删除当前整行</span><br><span class="line">-使用命令&quot;&#x2F;字段&quot;进行查找</span><br><span class="line">-按&quot;i&quot;在光标所在字符前开始插入</span><br><span class="line">-按&quot;a&quot;在光标所在字符后开始插入</span><br><span class="line">-按&quot;o&quot;在光标所在行的下面另起一新行插入</span><br><span class="line">-按&quot;：&quot;进入底行模式</span><br><span class="line">插入模式</span><br><span class="line">-此时可以对文件内容进行编辑，左下角会显示 &quot;-- 插入 --&quot;&quot;</span><br><span class="line">-按&quot;ESC&quot;进入底行模式</span><br><span class="line">底行模式</span><br><span class="line">-退出编辑：      :q</span><br><span class="line">-强制退出：      :q!</span><br><span class="line">-保存并退出：    :wq</span><br><span class="line">## 操作步骤示例 ##</span><br><span class="line">1.保存文件：按&quot;ESC&quot; -&gt; 输入&quot;:&quot; -&gt; 输入&quot;wq&quot;,回车     &#x2F;&#x2F;保存并退出编辑</span><br><span class="line">2.取消操作：按&quot;ESC&quot; -&gt; 输入&quot;:&quot; -&gt; 输入&quot;q!&quot;,回车     &#x2F;&#x2F;撤销本次修改并退出编辑</span><br><span class="line">## 补充 ##</span><br><span class="line">vim +10 filename.txt                   &#x2F;&#x2F;打开文件并跳到第10行</span><br><span class="line">vim -R &#x2F;etc&#x2F;passwd                     &#x2F;&#x2F;以只读模式打开文件</span><br></pre></td></tr></table></figure>
-<h2 id="4-4-查看文件"><a href="#4-4-查看文件" class="headerlink" title="4.4 查看文件"></a>4.4 查看文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat a.txt          &#x2F;&#x2F;查看文件最后一屏内容</span><br><span class="line">less a.txt         &#x2F;&#x2F;PgUp向上翻页，PgDn向下翻页，&quot;q&quot;退出查看</span><br><span class="line">more a.txt         &#x2F;&#x2F;显示百分比，回车查看下一行，空格查看下一页，&quot;q&quot;退出查看</span><br><span class="line">tail -100 a.txt    &#x2F;&#x2F;查看文件的后100行，&quot;Ctrl+C&quot;退出查看</span><br></pre></td></tr></table></figure>
-<h1 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h1><h2 id="Vim常用操作"><a href="#Vim常用操作" class="headerlink" title="Vim常用操作"></a>Vim常用操作</h2><p><strong>Vim没有菜单，只有命令</strong><br><strong>Vim的工作模式有三种：</strong></p>
-<ul>
-<li><p><strong>第一种：命令模式 vi/vim+文件名 进入命令模式 不可以输入文字，只能识别命令</strong><br><strong>插入命令：<br>a：在光标所在字符后插入<br>A：在光标所在行尾插入<br>i：在光标所在字符前插入<br>I：在光标所在行行首插入<br>o：在光标下插入新行<br>O：在光标上插入新行</strong></p>
-</li>
-<li><p><strong>第二种：插入模式 按i/a/o进入，可以继续输入文字，按Esc退出</strong></p>
-</li>
-<li><p>第三种：编辑模式 在命令模式下按:，即可进入 编辑模式 可以输入编辑命令 比如：保存并退出，加行号</p>
-<p>定位命令：</p>
-<ul>
-<li>:set nu <strong>设置行号</strong></li>
-<li>:set nonu <strong>取消行号</strong></li>
-<li>gg <strong>到第一行</strong></li>
-<li>G <strong>到最后一行</strong></li>
-<li>nG <strong>到第n行</strong></li>
-<li>: n <strong>到第n行 和上面一样的格式</strong></li>
-<li>$ <strong>移动到行尾</strong></li>
-<li>0 <strong>移动到行首</strong></li>
-</ul>
-</li>
-<li><p>删除命令：</p>
-<ul>
-<li>x <strong>删除光标所在处的字符</strong></li>
-<li>nx <strong>删除光标所在处后n个字符</strong></li>
-<li>nd <strong>删除光标所在行</strong></li>
-<li>ndd <strong>删除n行</strong></li>
-<li>dG <strong>删除光标所在行到文件末尾的内容</strong></li>
-<li>D <strong>删除光标所在处到行尾内容</strong></li>
-<li>:n1,n2d <strong>删除指定范围的行 n1-n2的行全部被删除</strong></li>
-</ul>
-</li>
-<li><p>复制和剪切命令：</p>
-<ul>
-<li>yy <strong>复制当前行</strong></li>
-<li>nyy <strong>复制当前行一下n行</strong></li>
-<li>dd <strong>剪切当前行</strong></li>
-<li>ndd <strong>剪切当前行以下n行</strong></li>
-<li>p <strong>粘贴在当前光标所在行下</strong></li>
-<li>P <strong>粘贴在当前光标所在行上</strong></li>
-</ul>
-</li>
-<li><p>替换或取消命令：</p>
-<ul>
-<li>r <strong>替换光标所在处字符</strong></li>
-<li>R <strong>从光标所在处开始替换字符，按Esc结束</strong></li>
-<li>u <strong>取消上一不操作</strong></li>
-</ul>
-</li>
-<li><p>搜索和搜索替换命令：</p>
-<ul>
-<li>/string <strong>搜索指定字符串string 与less命令操作类似</strong><br><strong>搜索时忽略大小写:set ic<br>搜索时不忽略大小写:set noic</strong></li>
-<li>n <strong>搜索指定字符串的下一个出现位置</strong></li>
-<li>:%s/要替换的字符串/替换的新的字符串/g 不询问<br><strong>把/g换成/c 进行询问确认<br>全文替换指定字符串</strong></li>
-<li>:n1,n2s/要替换的字符串/替换的新的字符串/g<br><strong>在一定范围内替换指定字符串</strong></li>
-</ul>
-</li>
-<li><p><strong>保存和退出命令：</strong><br>:w <strong>保存修改</strong><br>:w new_filename <strong>另存为指定文件</strong><br>:wq <strong>保存修改并退出</strong><br>ZZ <strong>快捷键，保存修改退出</strong><br>:q! <strong>不保存修改退出</strong><br>:wq! <strong>保存修改并退出（只有文件所有者以及root可以使用）适合保存root只有只读权限的文件</strong></p>
-</li>
-</ul>
-<h2 id="Vim使用技巧"><a href="#Vim使用技巧" class="headerlink" title="Vim使用技巧"></a>Vim使用技巧</h2><p><strong>在Vim中有许多黑科技小技巧便于我们操作，我总结了以下几天最为方便的操作，以供大家学习：</strong></p>
-<ul>
-<li>:r !命令 <strong>当前的Vim文档导入命令执行结果</strong><br><strong>例子：<br>:r !date 直接把当前时间导入当前的Vim文档</strong></li>
-<li>map [快捷键] [触发命令] 定义快捷键<br><strong>其中快捷键需要按ctrl+v+需要设定的键位，设定好之后颜色会变，比如想设定ctrl p为快捷键那么就按ctrl+v+p 会出现^P ，不能按shift+6出现的^,这两个虽然看起来一样但是颜色不一样<br>触发命令按需要执行的命令的先后顺序来排列，比如给脚本加注释#键就可以把[触发命令]设为I#<br>例子：<br>map ^P I# 给脚本行首加#注释</strong></li>
-<li>:n1,n2s/^/#/g <strong>替换行首字符为#，连续行的注释，不过需先设置行号 :set nu</strong></li>
-<li>:n1,n2s/^#/ /g <strong>取消注释</strong></li>
-<li>:n1,n2s/^/ \ / \ //g <strong>给行首加// 需先设置行号 :set nu</strong><br><strong>因为系统无法识别太多的，所以需要在//每一条/前都加转义符\，\表达命令的正在含义，比如ls /etc 里面的文件会有颜色，但是\ls 就没有，他是表达执行ls真正含义不执行ls别名</strong></li>
-<li>ab [a内容][b内容]</li>
 </ul>
 ]]></content>
   </entry>
