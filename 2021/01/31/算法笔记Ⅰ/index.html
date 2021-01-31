@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> 算法笔记Ⅰ - LL的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+字符串反转的四种方法：1,利用字符串的拼接(charAt()方法),把后遍历出来的放在前面即可实现反转12345678public static String charAtReverse (Str,"> 
+    <meta name="author" content="LL"> 
+    <link rel="alternative" href="atom.xml" title="LL的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">LL的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"> 算法笔记Ⅰ</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"> 算法笔记Ⅰ</h1>
+        <div class="stuff">
+            <span>一月 31, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <hr>
+<h2 id="字符串反转的四种方法："><a href="#字符串反转的四种方法：" class="headerlink" title="字符串反转的四种方法："></a>字符串反转的四种方法：</h2><h4 id="1-利用字符串的拼接-charAt-方法-把后遍历出来的放在前面即可实现反转"><a href="#1-利用字符串的拼接-charAt-方法-把后遍历出来的放在前面即可实现反转" class="headerlink" title="1,利用字符串的拼接(charAt()方法),把后遍历出来的放在前面即可实现反转"></a>1,利用字符串的拼接(charAt()方法),把后遍历出来的放在前面即可实现反转</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static String charAtReverse (String s)&#123;</span><br><span class="line">   int length &#x3D; s.length();</span><br><span class="line">   String reverse &#x3D; &quot; &quot;;</span><br><span class="line">   for (int i &#x3D; 0; i &lt; length; i++) &#123;</span><br><span class="line">    reverse &#x3D; s.charAt(i)+reverse;&#x2F;&#x2F;字符串中获取单个字符的字符的放法</span><br><span class="line">   &#125;</span><br><span class="line">   return reverse;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-利用字符串的拼接-toCharArray-处理成字符数组的方法-把后遍历出来的放在前面即可实现反转"><a href="#2-利用字符串的拼接-toCharArray-处理成字符数组的方法-把后遍历出来的放在前面即可实现反转" class="headerlink" title="2,利用字符串的拼接(toCharArray()处理成字符数组的方法),把后遍历出来的放在前面即可实现反转"></a>2,利用字符串的拼接(toCharArray()处理成字符数组的方法),把后遍历出来的放在前面即可实现反转</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static String reverseCharArrays(String s)&#123;</span><br><span class="line">    char []array &#x3D; s.toCharArray();&#x2F;&#x2F;把字符串分割成单个字符的数组</span><br><span class="line">    String reverse &#x3D; &quot;&quot;;</span><br><span class="line">    for(int i &#x3D; array.length -1 ; i&gt;&#x3D;0 ; i--)&#123;&#x2F;&#x2F;遍历数组,从后向前拼接</span><br><span class="line">        reverse +&#x3D;array[i];</span><br><span class="line">    &#125;</span><br><span class="line">    return reverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-利用StringBuffer的reverse-方法"><a href="#3-利用StringBuffer的reverse-方法" class="headerlink" title="3,利用StringBuffer的reverse()方法"></a>3,利用StringBuffer的reverse()方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static String reverseStringBuffer(String s)&#123;</span><br><span class="line">    StringBuffer sb &#x3D; new StringBuffer(s);</span><br><span class="line">    String afterReverse &#x3D; sb.reverse().toString();</span><br><span class="line">    return afterReverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-利用递归的方法-类似与二分查找的折半思想"><a href="#4-利用递归的方法-类似与二分查找的折半思想" class="headerlink" title="4,利用递归的方法,类似与二分查找的折半思想"></a>4,利用递归的方法,类似与二分查找的折半思想</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public static String reverseRecursive(String s)&#123;</span><br><span class="line">    int length &#x3D; s.length();</span><br><span class="line">    if(length&lt;&#x3D;1)&#123;</span><br><span class="line">        return s;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    String left  &#x3D; s.substring(0,length&#x2F;2);</span><br><span class="line">    String right &#x3D; s.substring(length&#x2F;2 ,length);</span><br><span class="line">    String afterReverse &#x3D; reverseRecursive(right)+reverseRecursive(left);&#x2F;&#x2F;此处是递归的方法调用</span><br><span class="line">    return afterReverse;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="总归就是三种方法"><a href="#总归就是三种方法" class="headerlink" title="总归就是三种方法"></a>总归就是三种方法</h4><ol>
+<li><p>单个字符逆序拼接</p>
+</li>
+<li><p>StringBuffer自带的反转方法</p>
+</li>
+<li><p>递归</p>
+</li>
+</ol>
+<h2 id="替换空格"><a href="#替换空格" class="headerlink" title="替换空格"></a>替换空格</h2><p><strong>题目</strong><br><strong>请实现一个函数，将一个字符串中的每个空格替换成“%20”</strong></p>
+<p>例如，当字符串为We Are Happy.则经过替换之后的字符串为</p>
+<blockquote>
+<p>We%20Are%20Happy。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">public String replaceSpace(StringBuffer str) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>思路:<br>        null的返回null，不是null的把字符串循环，循环后查找替换，注意java中常用的字符串和字符的一些函数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">public String replaceSpace(StringBuffer str) &#123;</span><br><span class="line">        if(str &#x3D;&#x3D; null)&#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; str.length(); i++)&#123;</span><br><span class="line">            if(str.charAt(i) &#x3D;&#x3D; &#39; &#39;)&#123;</span><br><span class="line">                str.replace(i,i+1,&quot;%20&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return str.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="知识点总结"><a href="#知识点总结" class="headerlink" title="知识点总结"></a>知识点总结</h2><h4 id="一-、-StringBuffer和StringBuilder类"><a href="#一-、-StringBuffer和StringBuilder类" class="headerlink" title="一 、 StringBuffer和StringBuilder类"></a>一 、 StringBuffer和StringBuilder类</h4><p><strong>在对字符串进行修改时，需要使用StringBuffer和StringBuilder类，但是二者的区别是StringBuilder不是线程安全的（即不能同步访问），但是StringBuilder有速度的优势，一般情况下会使用StringBuilder类，二者的方法一致。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static void test() &#123;</span><br><span class="line">    StringBuffer str &#x3D; new StringBuffer(); &#x2F;&#x2F;StringBuilder str &#x3D; new StringBuilder();</span><br><span class="line">    str.append(&quot;Hello&quot;);</span><br><span class="line">    str.append(&quot; &quot;);</span><br><span class="line">    str.append(123);</span><br><span class="line">    System.out.print(&quot;添加字符串：&quot;);</span><br><span class="line">    System.out.println(str);</span><br><span class="line">    System.out.print(&quot;替换字符串：&quot;);</span><br><span class="line">    System.out.println(str.replace(6,9,&quot;rjx&quot;));</span><br><span class="line">    System.out.print(&quot;翻转字符串：&quot;);</span><br><span class="line">    System.out.println(str.reverse());</span><br><span class="line">    String a &#x3D; &quot;Test&quot;;</span><br><span class="line">    StringBuffer b &#x3D; new StringBuffer(a);  &#x2F;&#x2F;将 String 转化为 StringBuffer 并翻转</span><br><span class="line">    System.out.println(b.reverse().toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二、-String"><a href="#二、-String" class="headerlink" title="二、 String"></a>二、 String</h4><ol>
+<li><p>String 和 StringBuffer<br>String 类是不可改变的，所以你一旦创建了 String 对象，那它的值就无法改变了。如果需要对字符串做很多修改，那么应该选择使用 StringBuffer &amp; StringBuilder 类。</p>
+</li>
+<li><p>String 的初始化<br>public class StringDemo{<br>public static void main(String args[]){<br>   char[] helloArray = { ‘r’, ‘u’, ‘n’, ‘o’, ‘o’, ‘b’};<br>   String helloString = new String(helloArray);<br>   System.out.println( helloString );<br>}<br>}</p>
+</li>
+</ol>
+<ol start="3">
+<li>常用方法<br> 字符串长度 : str.length()<br> 连接两个字符串 : str1.concat(str2)<pre><code>                         “Hello,” + “world” + “!”</code></pre>
+ 定位到索引处的字符串 : charAt(int index)<br> 返回此字符串的哈希码 : int indexOf(int ch)</li>
+</ol>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

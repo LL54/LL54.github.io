@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>算法笔记Ⅱ - LL的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+移除元素难度简单758收藏分享切换为英文接收动态反馈
+给你一个数组 nums 和一个值 val，你需要 原地移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+不要使用额外的数组空间，你,"> 
+    <meta name="author" content="LL"> 
+    <link rel="alternative" href="atom.xml" title="LL的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">LL的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">算法笔记Ⅱ</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">算法笔记Ⅱ</h1>
+        <div class="stuff">
+            <span>一月 31, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <hr>
+<h1 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h1><p>难度简单758收藏分享切换为英文接收动态反馈</p>
+<p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 原地移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong>[原地]修改输入数组</strong>。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p><strong>说明:</strong></p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len &#x3D; removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">&#x2F;&#x2F; 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span><br><span class="line">for (int i &#x3D; 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [3,2,2,3], val &#x3D; 3</span><br><span class="line">输出：2, nums &#x3D; [2,2]</span><br><span class="line">解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums &#x3D; [2,2,3,3] 或 nums &#x3D; [2,2,0,0]，也会被视作正确答案。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums &#x3D; [0,1,2,2,3,0,4,2], val &#x3D; 2</span><br><span class="line">输出：5, nums &#x3D; [0,1,4,0,3]</span><br><span class="line">解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><p><code>0 &lt;= nums.length &lt;= 100</code></p>
+</li>
+<li><p><code>0 &lt;= nums[i] &lt;= 50</code></p>
+</li>
+<li><p><code>0 &lt;= val &lt;= 100</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">    public int removeElement(int[] nums, int val) &#123;</span><br><span class="line">    int i&#x3D;0;</span><br><span class="line">    int count&#x3D;0;</span><br><span class="line">    int len&#x3D;nums.length;</span><br><span class="line">    for(i&#x3D;0;i&lt;len;i++)&#123;</span><br><span class="line">        if(nums[i]!&#x3D;val)</span><br><span class="line">        &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    int t&#x3D;count;</span><br><span class="line">    for(int k&#x3D;0;k&lt;len-count;k++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(i&#x3D;0;i&lt;len;i++)</span><br><span class="line">        if(nums[i]&#x3D;&#x3D;val)</span><br><span class="line">        &#123;</span><br><span class="line">            int tmp&#x3D;nums[i];</span><br><span class="line">            nums[i]&#x3D;nums[len-k-1];</span><br><span class="line">            nums[len-k-1]&#x3D;tmp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p><strong>思路</strong>：</p>
+<p>先找到数组中数组共有多少个数字与val的值不相等，记为则有 len -  count 个元素与val的值相等。</p>
+<p>按顺序逐个扫描数组，找出第一个与val相等的元素，将它移到数组的最后一个位置处。</p>
+<p>按顺序逐个扫描数组，找出第二个与val相等的元素，将它移到数组的倒数第二个位置处。 </p>
+<p>按顺序逐个扫描数组，找出第 <strong><em>\</em>i**</strong> 个与 val 相等的元素，将它移到数组的倒数第len -  k -1位置处。（int k=0;k&lt;len-count;k++）</p>
+<p>例：nums = [3,4,5,6,4,1,2], val = 4</p>
+<h2 id="搜索插入位置"><a href="#搜索插入位置" class="headerlink" title="搜索插入位置"></a>搜索插入位置</h2><p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
+<p>你可以假设数组中无重复元素。</p>
+<p><strong>示例 1:</strong><br><strong>输入:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>], <span class="number">5</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>输出:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong><br><strong>输入:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>], <span class="number">2</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>输出:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例 3:</strong><br><strong>输入:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>], <span class="number">7</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>输出:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例 4:</strong><br><strong>输入:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>], <span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>输出:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong><br>目标值存在就返回等于目标值的元素下标，不存在就返回比目标值大的那个元素下标。所以直接判断大于等于的那个值就好啦~</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">searchInsert</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a=nums.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; a; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&gt;=target)<span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h1 id="长度最小的子数组"><a href="#长度最小的子数组" class="headerlink" title="长度最小的子数组"></a>长度最小的子数组</h1><p>给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的 连续 子数组，并返回其长度。如果不存在符合条件的子数组，返回 0。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：s = <span class="number">7</span>, nums = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>]</span><br><span class="line">输出：<span class="number">2</span></span><br><span class="line">解释：子数组 [<span class="number">4</span>,<span class="number">3</span>] 是该条件下的长度最小的子数组。</span><br><span class="line"><span class="number">123</span></span><br></pre></td></tr></table></figure>
+<p><strong>进阶：</strong><br>如果你已经完成了 O(n) 时间复杂度的解法, 请尝试 O(n log n) 时间复杂度的解法。</p>
+<p><strong>思路:</strong><br>1.双指针,一个快指针,一个慢指针,当两个指针之间的数的和小于目标值,快指针就后移同时加上下一个数,当和目标值大于等于目标值的时候,减去slow指针的数,slow后移,如果快慢指针之间数的个数比之前的最小长度小就更新</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a=<span class="number">7</span>;</span><br><span class="line">        <span class="keyword">int</span>[] nums=&#123;<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        minSubArrayLen(a,nums);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> fast,slow;</span><br><span class="line">        fast=slow=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len=Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">while</span>(fast&lt;nums.length+<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;s)&#123;</span><br><span class="line">                <span class="comment">//还需增加</span></span><br><span class="line">                <span class="keyword">if</span>(fast!=nums.length)</span><br><span class="line">                sum+=nums[fast++];</span><br><span class="line">                <span class="comment">//当长度等与fast且小于目标值的时候说明已经遍历完了</span></span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//更新长度</span></span><br><span class="line">                <span class="keyword">if</span>((fast-slow)&lt;len)</span><br><span class="line">                &#123;</span><br><span class="line">                   len=fast-slow;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//减去最左边的</span></span><br><span class="line">                sum-=nums[slow++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(len==Integer.MAX_VALUE) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="移除链表元素"><a href="#移除链表元素" class="headerlink" title="移除链表元素"></a>移除链表元素</h1><p>删除链表中等于给定值 val 的所有节点。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">6</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;<span class="number">6</span>, val = <span class="number">6</span></span><br><span class="line">输出: <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong>设置哨兵节点x,以便能删除头节点。<br><strong>代码:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">removeElements</span><span class="params">(ListNode* head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">        ListNode* x = <span class="keyword">new</span> ListNode(<span class="number">-1</span>);</span><br><span class="line">        x-&gt;next = head;</span><br><span class="line">        ListNode* i = x;</span><br><span class="line">        <span class="keyword">while</span>(i-&gt;next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i-&gt;next-&gt;val == val)</span><br><span class="line">            &#123;</span><br><span class="line">                i-&gt;next = i-&gt;next-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                i = i-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
