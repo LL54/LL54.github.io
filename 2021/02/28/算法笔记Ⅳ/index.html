@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - LL的博客</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+计算平均成绩 
+
+给定N个学生的基本信息，包括学号（由5个数字组成的字符串）、姓名（长度小于10的不包含空白字符的非空字符串）和成绩（[0,100]区间内的整数），要求计算他们的平均成绩，并顺序输,"> 
+    <meta name="author" content="LL"> 
+    <link rel="alternative" href="atom.xml" title="LL的博客" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">LL的博客</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>二月 28, 2021</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <ol>
+<li>计算平均成绩 </li>
+</ol>
+<p>给定N个学生的基本信息，包括学号（由5个数字组成的字符串）、姓名（长度小于10的不包含空白字符的非空字符串）和成绩（[0,100]区间内的整数），要求计算他们的平均成绩，并顺序输出平均线以下的学生名单。</p>
+<h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出正整数N（≤10）。随后N行，每行给出一位学生的信息，格式为“学号 姓名 成绩”，中间以空格分隔。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>首先在一行中输出平均成绩，保留2位小数。然后按照输入顺序，每行输出一位平均线以下的学生的姓名和学号，间隔一个空格。</p>
+<h3 id="输入样例："><a href="#输入样例：" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">00001 zhang 70</span><br><span class="line">00002 wang 80</span><br><span class="line">00003 qian 90</span><br><span class="line">10001 li 100</span><br><span class="line">21987 chen 60</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例："><a href="#输出样例：" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">80.00</span><br><span class="line">zhang 00001</span><br><span class="line">chen 21987</span><br></pre></td></tr></table></figure>
+<h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">struct student&#123;</span><br><span class="line">	char num[6];</span><br><span class="line">	char name[10];</span><br><span class="line">	int score;</span><br><span class="line">&#125;; </span><br><span class="line">int main ()&#123;</span><br><span class="line">	struct student A[10];</span><br><span class="line">	int n,i,sum&#x3D;0;</span><br><span class="line">	scanf(&quot;%d\n&quot;,&amp;n);</span><br><span class="line">	for(i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">	scanf(&quot;%s%s%d&quot;,A[i].num,A[i].name,&amp;A[i].score);</span><br><span class="line">	sum+&#x3D;A[i].score;&#125;</span><br><span class="line">	float average;</span><br><span class="line">	average&#x3D;((float)sum)&#x2F;n;</span><br><span class="line">	int flag&#x3D;0;</span><br><span class="line">	printf(&quot;%.2f\n&quot;,average);</span><br><span class="line">	for(i&#x3D;0;i&lt;n;i++)&#123;</span><br><span class="line">		if(A[i].score&lt;average&amp;&amp;flag&#x3D;&#x3D;0)&#123;</span><br><span class="line">			printf(&quot;%s %s&quot;,A[i].name,A[i].num);</span><br><span class="line">			flag++;</span><br><span class="line">		&#125;</span><br><span class="line">		else if(A[i].score&lt;average)&#123;</span><br><span class="line">			printf(&quot;\n&quot;);</span><br><span class="line">			printf(&quot;%s %s&quot;,A[i].name,A[i].num);</span><br><span class="line">	&#125;&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li>计算职工工资 (20 分)</li>
+</ol>
+<p>给定N个职员的信息，包括姓名、基本工资、浮动工资和支出，要求编写程序顺序输出每位职员的姓名和实发工资（实发工资=基本工资+浮动工资-支出）。</p>
+<h3 id="输入格式：-1"><a href="#输入格式：-1" class="headerlink" title="输入格式："></a>输入格式：</h3><p>输入在一行中给出正整数N。随后N行，每行给出一位职员的信息，格式为“姓名 基本工资 浮动工资 支出”，中间以空格分隔。其中“姓名”为长度小于10的不包含空白字符的非空字符串，其他输入、输出保证在单精度范围内。</p>
+<h3 id="输出格式：-1"><a href="#输出格式：-1" class="headerlink" title="输出格式："></a>输出格式：</h3><p>按照输入顺序，每行输出一位职员的姓名和实发工资，间隔一个空格，工资保留2位小数。</p>
+<h3 id="输入样例：-1"><a href="#输入样例：-1" class="headerlink" title="输入样例："></a>输入样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">zhao 240 400 75</span><br><span class="line">qian 360 120 50</span><br><span class="line">zhou 560 150 80</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例：-1"><a href="#输出样例：-1" class="headerlink" title="输出样例："></a>输出样例：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zhao 565.00</span><br><span class="line">qian 430.00</span><br><span class="line">zhou 630.00</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#define N 1000</span><br><span class="line">struct yuan</span><br><span class="line">&#123;</span><br><span class="line">  char name[11];</span><br><span class="line">  double z1;</span><br><span class="line">  double z2;</span><br><span class="line">  double z3;</span><br><span class="line">  double sum;</span><br><span class="line">&#125;ren[N];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int n,i;</span><br><span class="line">  scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">  for(i&#x3D;0;i&lt;n;i++)</span><br><span class="line">  &#123;</span><br><span class="line">    scanf(&quot;%s %lf %lf %lf&quot;,ren[i].name,&amp;ren[i].z1,&amp;ren[i].z2,&amp;ren[i].z3);</span><br><span class="line">    ren[i].sum&#x3D;ren[i].z1+ren[i].z2-ren[i].z3;</span><br><span class="line">  &#125;</span><br><span class="line">  for(i&#x3D;0;i&lt;n;i++)</span><br><span class="line">  &#123;</span><br><span class="line">       printf(&quot;%s %.2lf\n&quot;,ren[i].name,ren[i].sum);</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>通讯录排序 (20 分)</li>
+</ol>
+<p>输入n个朋友的信息，包括姓名、生日、电话号码，本题要求编写程序，按照年龄从大到小的顺序依次输出通讯录。题目保证所有人的生日均不相同。</p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式:"></a>输入格式:</h3><p>输入第一行给出正整数n（&lt;10）。随后n行，每行按照“姓名 生日 电话号码”的格式给出一位朋友的信息，其中“姓名”是长度不超过10的英文字母组成的字符串，“生日”是<code>yyyymmdd</code>格式的日期，“电话号码”是不超过17位的数字及<code>+</code>、<code>-</code>组成的字符串。</p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式:"></a>输出格式:</h3><p>按照年龄从大到小输出朋友的信息，格式同输出。</p>
+<h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例:"></a>输入样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">zhang 19850403 13912345678</span><br><span class="line">wang 19821020 +86-0571-88018448</span><br><span class="line">qian 19840619 13609876543</span><br></pre></td></tr></table></figure>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例:"></a>输出样例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wang 19821020 +86-0571-88018448</span><br><span class="line">qian 19840619 13609876543</span><br><span class="line">zhang 19850403 13912345678</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">struct person</span><br><span class="line">&#123;</span><br><span class="line">    char name[11];</span><br><span class="line">    long int date;</span><br><span class="line">    char phone[20];</span><br><span class="line">&#125;;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int num;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;num);</span><br><span class="line">    struct person array[num];</span><br><span class="line">    for(int i&#x3D;0;i&lt;num;i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        scanf(&quot;%s %ld %s&quot;,array[i].name,&amp;array[i].date,array[i].phone);</span><br><span class="line">    &#125;   </span><br><span class="line">    struct person temp;</span><br><span class="line">    for(int i&#x3D;0;i&lt;num-1; i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        for(int j&#x3D;i+1;j&lt;num; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(array[i].date&gt;array[j].date)</span><br><span class="line">            &#123;</span><br><span class="line">                temp &#x3D; array[j];</span><br><span class="line">                array[j] &#x3D; array[i];</span><br><span class="line">                array[i] &#x3D; temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   </span><br><span class="line">    for(int i&#x3D;0;i&lt;num;i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        printf(&quot;%s %ld %s\n&quot;,array[i].name,array[i].date,array[i].phone);</span><br><span class="line">    &#125;   </span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
